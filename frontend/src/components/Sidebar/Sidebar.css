@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+.sidebar {
+  width: 250px;
+  padding: 20px;
+  background-color: rgb(10, 10, 54);
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+  border-radius: 1px;
+  transition: width 0.3s ease;
+}
+
+.sidebar img {
+  border-radius: 50%;
+    width: 160px;
+    height: 160px;
+    margin-left: 11%;
+    margin-bottom: 20px;
+    border: none;
+}
+.sidebar.collapsed img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-left: -1%;
+}
+.sidebar.collapsed {
+  width: 80px;
+  padding: 20px 10px;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.ri-align-justify {
+  cursor: pointer;
+  font-size: 24px;
+  color: white;
+  margin-left: 0.8%;
+  
+}
+
+.ri-align-justify.collapsed {
+  margin-left: 15%;
+}
+
+
+
+.sidebar-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  color:rgb(241, 232, 232);
+}
+
+.sidebar-option:hover {
+  color: white;
+}
+
+.sidebar h2 {
+  font-size: 18px;
+  margin: 0;
+  color: white;
+}
+
+.sidebar.collapsed h2 {
+  display: none;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-option nav ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.sidebar .logout {
+  margin-top: 50px;
+  padding: 10px;
+  width: 140px;
+  background: rgb(6, 6, 105);
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.sidebar.collapsed .logout {
+ display: none;
+}
+
+.sidebar-option.active {
+  background: rgb(7,10,80);
+  background: linear-gradient(225deg, rgba(7,10,80,1) 0%, rgba(42,44,105,1) 19%, rgba(57,59,115,1) 31%, rgba(62,64,119,1) 38%, rgba(109,127,153,1) 97%, rgba(118,121,176,1) 98%, rgba(128,140,207,1) 98%, rgba(86,100,156,1) 99%, rgba(101,103,153,1) 100%, rgba(188,191,233,1) 100%);
+  border-color: #bbb3b3;
+}

@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+/* General styles for the favorites page */
+.favorites-container {
+  display: flex;
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+  background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+  
+}
+
+.favorites-content {
+  flex: 1;
+  padding: 20px;
+  background-color:transparent;
+  overflow-y: auto; /* Ensure content scrolls when overflow occurs */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  margin-left: 3%;
+  margin-right: 1%; 
+  overflow-y: auto;
+}
+.favorites-content::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+.favorites-content::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+}
+
+.favorites-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.favorites-header h1 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: rgb(6, 6, 105);
+}
+
+.favorites-list {
+  list-style: none;
+  padding: 0;
+}
+
+.favorite-item {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1100px;
+}
+
+.favorite-item h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.favorite-item p {
+  margin: 5px 0 0;
+  color: #777;
+}
+
+.favorite-item button {
+  padding: 10px 20px;
+  background-color:  rgb(6, 6, 105);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: 20px;
+  transition: transform 0.2s;
+}
+
+.favorite-item button:hover {
+  background-color: rgb(4, 4, 59);
+  transform: scale(1.05);
+}
+
+/* Favorites.css */
+
+.no-favorites-message {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #555;
+}
+
+
+  

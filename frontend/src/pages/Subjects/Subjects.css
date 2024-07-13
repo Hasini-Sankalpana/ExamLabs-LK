@@ -1,0 +1,40 @@
+.subject-container {
+    padding: 20px;
+}
+
+.subject-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.subject-card {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: calc(50% - 20px); /* Adjust based on your layout */
+    max-width: 300px;
+}
+
+.subject-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.view-papers-button {
+    display: block;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.view-papers-button:hover {
+    background-color: #0056b3;
+}

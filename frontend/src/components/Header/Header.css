@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+.header{
+    position: relative;
+    height: 34vw;
+     margin: 30px auto;
+    filter:saturate(70%);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 50px;
+    font-family: "Roboto", sans-serif;
+    width: 80%;
+    background: url(./header_2.png) no-repeat;
+    background-size: contain;
+    display: flex;
+    justify-content: space-between;
+   
+}
+
+.header-img img {
+    width: 100%;
+    height: auto;
+    margin-left: 110%;
+    margin-top: 8%;
+}
+
+.header-contents{
+    position: absolute;
+    animation: fadeIn 3s;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1.5vw;
+    max-width: 65%;
+    bottom: 20%;
+    left: 3.2vw;
+}
+
+.header-contents h2{
+   font-size:max(4vw,22px);
+   font-weight: 600;
+   color: rgb(6, 6, 105);
+}
+
+.header-contents p{
+    
+    font-size:1.1vw;
+    color: black;
+    
+}
+
+.header-contents button{
+    display: inline-block;
+    padding: 13px 38px;
+    background:rgb(6, 6, 105);
+    color: #fff;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    transition: all ease .50s;
+    font-size: max(1vw,13px);
+    font-weight: 500;
+
+  
+}
+
+.header-contents button:hover{
+    border: 2px solid rgb(6, 6, 105);
+    background: transparent;
+    color: black;
+}
+
+

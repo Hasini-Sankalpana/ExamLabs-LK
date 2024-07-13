@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+.recent-papers {
+  padding: 20px;
+  width: 80%;
+  margin: auto;
+  font-family: "Roboto", sans-serif;
+  }
+  
+  .recent-papers h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+  
+  .papers-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: start;
+    margin-bottom: 20px;
+  }
+  
+  .recent-papers .paper-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 200px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    height: 310px;
+  }
+  
+  .paper-item:hover {
+    transform: scale(1.05);
+  }
+  
+  .paper-thumbnail {
+    height: 150px;
+  width: 220px;
+  background: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+  
+  .paper-thumbnail img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+  }
+  
+  .paper-info {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .paper-info h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .paper-info p {
+    font-size: 14px;
+    color: #555;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Number of lines to show */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .recent-papers button {
+    margin-top: 15px;
+    padding: 10px;
+    width: 140px;
+    background: rgb(6, 6, 105);
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    
+  }
+  
+  .recent-papers button:hover {
+    background:rgb(3, 3, 58) ;
+  }
+
+  .view-all {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 20px;
+    color:black;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 3%;
+  }
+  
+  .view-all:hover {
+    color:rgb(6, 6, 105);
+    text-decoration: underline;
+    
+  }
+  
+
+  @media (max-width: 768px) {
+    .recent-papers {
+      width: 90%; /* Adjust width for smaller screens */
+    }
+  
+    .paper-item {
+      width: 100%; 
+      max-width: none; 
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .recent-papers {
+      width: 100%; 
+      padding: 10px; 
+    }
+  
+    .papers-list {
+      gap: 10px; 
+    }
+  
+    .paper-item {
+      width: calc(50% - 10px); 
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .paper-item {
+      width: 100%;
+  }
+}

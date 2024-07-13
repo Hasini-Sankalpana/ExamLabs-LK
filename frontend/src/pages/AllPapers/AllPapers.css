@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+.all-papers {
+  padding: 20px;
+  width: 80%;
+  margin: auto;
+  font-family: "Roboto", sans-serif;
+}
+
+.all-papers h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.papers-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: start;
+}
+
+.paper-item {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 200px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  text-align: center;
+  height: 350px;
+}
+
+.paper-item:hover {
+  transform: scale(1.05);
+}
+
+.paper-thumbnail {
+  height: 150px;
+  width: 220px;
+  background: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.paper-info {
+  padding: 10px;
+}
+
+.paper-info h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.paper-info p {
+  font-size: 14px;
+    color: #555;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Number of lines to show */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.pdf-thumbnail-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.paper-info button {
+  margin-top: 10px;
+  padding: 10px;
+  width: 140px;
+  background: rgb(6, 6, 105);
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.paper-info button:hover {
+  background: rgb(3, 3, 58);
+}
+
+.all-papers .fav-btn {
+  background-color: rgb(46, 173, 46);
+}
+

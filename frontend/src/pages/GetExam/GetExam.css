@@ -1,0 +1,183 @@
+.get-exam-container {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 5%;
+    margin-bottom: 30%;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+  }
+
+  .get-exam-containers {
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 5%;
+    margin-bottom: 30%;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+  }
+  
+  .get-exam-container h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .get-exam-containers h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .get-exam-container p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 15px;
+  }
+
+  .get-exam-containers p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 15px;
+  }
+
+  .get-exam-containers button {
+    display: block;
+    width: 22%;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: rgb(6, 6, 105);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-top: 20px;
+    margin-left: 40%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center; 
+  }
+
+  .get-exam-containers button:hover {
+    background-color:rgb(12, 12, 75) ;
+    color: white;
+    
+  }
+  
+  .get-exam-containers ul {
+    margin-left: 20px;
+    margin-bottom: 60px;
+  }
+  
+  .get-exam-containers li {
+    list-style-type: disc;
+    margin-bottom: 5px;
+  }
+
+  
+  .start-button,
+  .return-button,
+  .get-exam-container button[type="submit"],
+  .button-container button {
+    display: block;
+    width: 20%;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: rgb(6, 6, 105);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center; /* Center button text */
+  }
+
+  
+  .start-button:hover,
+  .return-button:hover,
+  .get-exam-container button[type="submit"]:hover,
+  .button-container button:hover {
+    background-color:rgb(7, 7, 87);
+  }
+  
+
+
+
+  .question-block {
+    margin-top: 20px;
+  }
+  
+  .question-text {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .options-container {
+    display: grid;
+    gap: 10px;
+  }
+  
+  .option {
+    padding: 15px;
+    font-size: 1rem;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .option:hover {
+    background-color: rgb(116, 150, 198);
+  }
+  
+  .selected {
+    background-color: rgb(6, 6, 105);
+    color: white;
+  }
+  
+
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .button-container button {
+    width: 20%; /* Adjust width as needed */
+  }
+
+  .essay-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+  
+  .essay-input:focus {
+    outline: none;
+    border-color: rgb(6, 6, 105);
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .button-container button {
+    width: 20%; /* Adjust width as needed */
+  }
+  
+  

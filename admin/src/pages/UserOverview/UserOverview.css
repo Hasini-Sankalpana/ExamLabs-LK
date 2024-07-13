@@ -1,0 +1,83 @@
+
+.useroverview {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+  font-family: "Roboto", sans-serif;
+}
+
+.stats-container {
+  display: flex;
+  height: 190px;
+  flex-wrap: wrap;
+  margin-left: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.stat-item {
+  background-image: linear-gradient(-225deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 100%);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 5px;
+  width: 45.05%;
+  height: 180px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.stat-item-user {
+  background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 5px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 91%;
+  height: 180px;
+}
+
+.stat-item-user h3 {
+  margin-bottom: 10px;
+  font-size: 2em;
+}
+
+.stat-item-user p {
+  font-size: 4.5em;
+  color: #333;
+}
+
+
+
+.stat-item h3 {
+  margin-bottom: 10px;
+  font-size: 2em;
+}
+
+.stat-item p {
+  font-size: 4.5em;
+  color: #333;
+}
+
+.download-buttons button {
+  padding: 15px 20px;
+  width: 200px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  background-color: rgb(6, 6, 105);
+  background-image: linear-gradient(to right, #4973a6, #0b1049); 
+  transition: background-position 0.3s, border-color 0.3s, color 0.3s; 
+  cursor: pointer; 
+}
+
+.download-buttons button:hover {
+  background-position: right center; 
+  color: black; 
+ background: transparent;
+ border: 2px solid #07203e;
+}
