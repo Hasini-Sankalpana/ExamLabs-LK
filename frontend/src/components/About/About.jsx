@@ -24,7 +24,7 @@ const About = ({ token, setShowLogin }) => {
 
   const handleDownloadNow = () => {
     // Navigate to the All Papers page
-    navigate('/all-papers');
+    navigate('/subjects');
   };
 
   return (

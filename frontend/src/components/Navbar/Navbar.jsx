@@ -62,7 +62,7 @@ const Navbar = ({setShowLogin}) => {
                    </a>
                    {papersDropdown && (
                        <div className="dropdown-content">
-                           <li onClick={() => navigate('/all-papers')}><p>Past Papers</p></li>
+                           <li onClick={() => navigate('/subjects')}><p>Past Papers</p></li>
                            <li onClick={() => navigate('/marking-schemes')}><p>Marking Schemes</p></li>
                        </div>
                    )}

@@ -48,6 +48,7 @@ export const getItems = async (req, res) => {
     } else {
       items = await Item.find();
     }
+    console.log('Items:', items);
     res.status(200).json(items);
   } catch (error) {
     res.status(404).json({ message: error.message });
@@ -125,5 +126,4 @@ export const getItemById = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-
 

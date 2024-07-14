@@ -2,14 +2,15 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Worker, Viewer } from '@react-pdf-viewer/core';
 import { thumbnailPlugin } from '@react-pdf-viewer/thumbnail';
-import '@react-pdf-viewer/core/lib/styles/index.css';
-import '@react-pdf-viewer/thumbnail/lib/styles/index.css';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import '@react-pdf-viewer/core/lib/styles/index.css';
+import '@react-pdf-viewer/thumbnail/lib/styles/index.css';
 import './MarkingSchemes.css';
 
 const MarkingSchemes = () => {
     const [markingSchemes, setMarkingSchemes] = useState([]);
+    const [filteredMarkingSchemes, setFilteredMarkingSchemes] = useState([]);
     const [subject, setSubject] = useState('');
     const [year, setYear] = useState('');
     const thumbnailPluginInstance = thumbnailPlugin();
@@ -21,6 +22,7 @@ const MarkingSchemes = () => {
                 const res = await axios.get('http://localhost:4000/api/items');
                 const markingSchemeItems = res.data.reverse().filter(item => item.option === 'markingScheme');
                 setMarkingSchemes(markingSchemeItems);
+                setFilteredMarkingSchemes(markingSchemeItems); // Initialize filtered schemes
             } catch (error) {
                 console.error(error);
             }
@@ -51,11 +53,11 @@ const MarkingSchemes = () => {
 
     const handleFilter = () => {
         // Filter pdfs based on subject and year
-        const filteredMarkingSchemes = markingSchemes.filter(markingScheme => 
+        const filteredSchemes = markingSchemes.filter(markingScheme => 
             (subject ? markingScheme.subject === subject : true) &&
             (year ? markingScheme.year === year : true)
         );
-        setMarkingSchemes(filteredMarkingSchemes);
+        setFilteredMarkingSchemes(filteredSchemes); // Update filtered schemes
     };
 
     return (
@@ -70,6 +72,12 @@ const MarkingSchemes = () => {
                     <option value="History">History</option>
                     <option value="Geography">Geography</option>
                     <option value="English">English</option>
+                    <option value="Commerce">Commerce</option>
+                    <option value="Citizenship">Citizenship Education</option>
+                    <option value="EnglishLit">English Literature</option>
+                    <option value="ICT">ICT</option>
+                    <option value="Health">Health and Physical Education</option>
+                    <option value="HomeEconomics">Home Economics</option>
                 </select>
                 <select onChange={(e) => setYear(e.target.value)} value={year}>
                     <option value="">All Years</option>
@@ -81,7 +89,7 @@ const MarkingSchemes = () => {
             </div>
             <br />
             <div className="papers-list">
-                {markingSchemes.map((markingScheme) => {
+                {filteredMarkingSchemes.map((markingScheme) => {
                     // Convert backslashes to forward slashes for the URL
                     const fileUrl = `http://localhost:4000/${markingScheme.markingSchemeFile.replace(/\\/g, '/')}`;
                     return (

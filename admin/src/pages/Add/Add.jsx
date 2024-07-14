@@ -41,6 +41,12 @@ const Add = ({ onAddItem }) => {
     formData.append('questions', JSON.stringify(questions));
     formData.append('essayQuestions', JSON.stringify(essayQuestions));
 
+    // Log the form data
+    console.log('Form Data:');
+    for (let [key, value] of formData.entries()) {
+      console.log(`${key}: ${value}`);
+    }
+
     try {
       const res = await axios.post('http://localhost:4000/api/items', formData, {
         headers: {
@@ -121,7 +127,12 @@ const Add = ({ onAddItem }) => {
                 <option value="Science">Science</option>
                 <option value="History">History</option>
                 <option value="Geography">Geography</option>
-                <option value="English">English</option>
+                <option value="Commerce">Commerce</option>
+                <option value="Citizenship">Citizenship Studies</option>
+                <option value="EnglishLit">English Literature</option>
+                <option value="ICT">ICT</option>
+                <option value="Health">Health and physical sciences</option>
+                <option value="HomeEconomics">Home Economics</option>
               </select>
             </div>
             <div className="form-group">
@@ -233,21 +244,20 @@ const Add = ({ onAddItem }) => {
             <div className="essay-section">
               <h3>Structured Essay Questions</h3>
               {essayQuestions.map((q, index) => (
-                <div key={index} className="essay-question">
-                  <textarea
-                    placeholder={`Essay Question ${index + 1}`}
-                    value={q}
-                    onChange={(e) => handleEssayChange(index, e)}
-                    required
-                  />
-                </div>
+                <textarea
+                  key={index}
+                  placeholder="Essay Question"
+                  value={q}
+                  onChange={(e) => handleEssayChange(index, e)}
+                  required
+                />
               ))}
               <button type="button" onClick={handleAddEssay}>
                 Add Another Essay Question
               </button>
             </div>
           )}
-          <button type="submit">Add Item</button>
+          <button type="submit">Submit</button>
         </form>
       </div>
     </div>

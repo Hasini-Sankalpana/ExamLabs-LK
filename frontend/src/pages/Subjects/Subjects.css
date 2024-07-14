@@ -1,40 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 .subject-container {
-    padding: 20px;
+  padding: 20px;
+  width: 80%;
+  margin: auto;
+  font-family: "Roboto", sans-serif;
 }
 
 .subject-cards {
+    margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: start;
+}
+
+.subject-card-link {
+    text-decoration: none;
+    color: inherit;
 }
 
 .subject-card {
-    background-color: #f0f0f0;
-    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: calc(50% - 20px); /* Adjust based on your layout */
-    max-width: 300px;
+    overflow: hidden;
+    width: 200px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    text-align: center;
+    height: 300px;
+    cursor: pointer;
+}
+
+.subject-card:hover {
+    transform: scale(1.05);
+}
+
+.subject-card h3 {
+   margin: 0;
+   margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.subject-card p {
+    font-size: 0.9em;
+    color: #666;
 }
 
 .subject-card img {
     width: 100%;
-    height: auto;
+    height: 60%;
     border-radius: 8px;
-    margin-bottom: 10px;
-}
-
-.view-papers-button {
-    display: block;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
-    text-align: center;
-    padding: 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.view-papers-button:hover {
-    background-color: #0056b3;
 }

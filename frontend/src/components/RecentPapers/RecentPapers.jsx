@@ -46,7 +46,7 @@ const RecentPapers = () => {
           </div>
         ))}
       </div>
-      <Link to="/all-papers" className="view-all">
+      <Link to="/subjects" className="view-all">
         View All Papers
       </Link>
     </div>

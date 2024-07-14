@@ -13,6 +13,7 @@ import GetExam from './pages/GetExam/GetExam'
 import MarkingSchemes from './pages/MarkingSchemes/MarkingSchemes'
 import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy'
 import Subject from './pages/Subject/Subject'
+import Subjects from './pages/Subjects/Subjects'
 
 
 
@@ -34,7 +35,8 @@ const App = () => {
           <Route path='/all-papers' element={<AllPapers />} />
           <Route path='/marking-schemes' element={<MarkingSchemes />} />
           <Route path='/privacy-policy' element={<PrivacyPolicy />} />
-          <Route path='/subject' element={<Subject />} />
+          <Route path="/subjects" element={<Subjects />} />
+          <Route path="/subjects/:subject" element={<Subject />} />
         </Routes>
     </div>
    
