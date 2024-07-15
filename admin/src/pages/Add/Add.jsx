@@ -41,11 +41,6 @@ const Add = ({ onAddItem }) => {
     formData.append('questions', JSON.stringify(questions));
     formData.append('essayQuestions', JSON.stringify(essayQuestions));
 
-    // Log the form data
-    console.log('Form Data:');
-    for (let [key, value] of formData.entries()) {
-      console.log(`${key}: ${value}`);
-    }
 
     try {
       const res = await axios.post('http://localhost:4000/api/items', formData, {

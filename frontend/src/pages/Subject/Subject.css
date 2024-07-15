@@ -73,3 +73,16 @@
 .paper-info button.fav-btn:hover {
     background-color: rgb(47, 171, 47);
 }
+
+.filter-by-year {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.filter-by-year select {
+    width: 150px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    padding-left: 5px;
+    margin-left: 10px;
+}

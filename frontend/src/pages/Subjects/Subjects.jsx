@@ -1,17 +1,17 @@
 import React from 'react';
 import './Subjects.css';
 import { Link } from 'react-router-dom';
-import mathImage from '../../assets/math.jpg';
-import scienceImage from '../../assets/science.webp';
-import historyImage from '../../assets/history.jpg';
-import geographyImage from '../../assets/geography.avif';
+import mathImage from '../../assets/Maths.png';
+import scienceImage from '../../assets/science.png';
+import historyImage from '../../assets/history.png';
+import geographyImage from '../../assets/geography.png';
 import englishImage from '../../assets/english.png';
-import commerceImage from '../../assets/commerce.jpg';
-import civicImage from '../../assets/civic.jpg';
-import englishlitImage from '../../assets/englishlit.jpg';
-import ictImage from '../../assets/ict.jpg';
-import healthImage from '../../assets/health.jpg';
-import homescienceImage from '../../assets/homescience.jpg';
+import commerceImage from '../../assets/commerce.png';
+import civicImage from '../../assets/civic.png';
+import englishlitImage from '../../assets/englishlit.png';
+import ictImage from '../../assets/ict.png';
+import healthImage from '../../assets/health.png';
+import homescienceImage from '../../assets/homescience.png';
 
 
 
@@ -96,7 +96,7 @@ const Subjects = () => {
                         <div className="subject-card">
                             <img src={subject.image} alt={subject.name} />
                             <h3>{subject.name}</h3>
-                            <p>{subject.description}</p>
+                            
                         </div>
                     </Link>
                 ))}

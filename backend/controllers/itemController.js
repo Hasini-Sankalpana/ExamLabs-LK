@@ -48,7 +48,7 @@ export const getItems = async (req, res) => {
     } else {
       items = await Item.find();
     }
-    console.log('Items:', items);
+    
     res.status(200).json(items);
   } catch (error) {
     res.status(404).json({ message: error.message });
@@ -87,7 +87,7 @@ export const deleteItem = async (req, res) => {
 
     // Remove associated favorites
     try {
-      await Favorite.findOneAndDelete({ userId, paperId: req.params.paperId });
+      await Favorite.deleteMany({ paperId: id });
     } catch (favoriteError) {
       console.error('Error deleting associated favorites:', favoriteError);
       return res.status(500).json({ message: 'Error deleting associated favorites' });
@@ -99,7 +99,6 @@ export const deleteItem = async (req, res) => {
     res.status(500).json({ message: 'Internal server error' });
   }
 };
-
 
 export const getRecentPdfs = async (req, res) => {
   try {
