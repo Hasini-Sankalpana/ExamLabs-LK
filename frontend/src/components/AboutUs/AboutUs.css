@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+.about-contents {
+  display: grid;
+  align-items: center;
+  gap: 2rem;
+  width: 80%;
+  margin: auto;
+  margin-top: 70px;
+  margin-left: 16%;
+  margin-bottom: 30px;
+  font-family: "Roboto", sans-serif;
+  background: transparent;
+  justify-content: center;
+}
+
+.about-contents h1 {
+  font-size: 40px;
+  margin-left: -4%;
+  font-family: "Caveat", cursive;
+
+}
+
+.abouts {
+  display: flex;
+  flex-direction: row;
+  background-color: transparent;
+  gap:10px;
+  
+  margin-bottom: 20px;
+}
+
+.about-info, .about-infoo, .about-img, .about-imgg {
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.about-info, .about-infoo {
+  transform: translateX(-100px);
+  width: 70%;
+  
+}
+
+.about-img, .about-imgg {
+  transform: translateX(100px);
+}
+
+.about-info.visible, .about-infoo.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.about-img.visible, .about-imgg.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.about-img img {
+  width: 500px;
+  height: auto;
+  margin-top: -100px;
+}
+
+.about-imgg img {
+  width: 500px;
+  height: auto;
+  margin-top: -100px;
+  margin-left: -100px;
+}
+
+.about-info {
+  margin-top: 80px;
+  width: 50%;
+}
+
+.about-infoo {
+  margin-top: 80px;
+  width: 50%;
+  margin-left: 2%;
+}
+
+.about-info h3,
+.about-infoo h3 {
+  font-size: 30px;
+  font-family: "Shantell Sans", cursive;
+  margin-bottom: 20px;
+}
+
+.about-info p,
+.about-infoo p {
+  font-size: 14px;
+  margin-bottom: 20px;
+  font-family: "Titillium Web", sans-serif;
+  width: 100%;
+}
+
+.abouts button {
+  margin-top: 24px;
+  padding: 10px;
+  width: 140px;
+  background: rgb(6, 6, 105);
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.abouts button:hover {
+  background: transparent;
+  border: 1px solid rgb(6, 6, 105);
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .about-contents {
+    width: 90%;
+    margin-left: 0;
+  }
+  .abouts {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .about-info, .about-infoo {
+    width: 100%;
+    margin-left: 0;
+  }
+  .about-img, .about-imgg {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-contents {
+    width: 100%;
+    padding: 10px;
+  }
+  .about-img img, .about-imgg img {
+    width: 100%;
+    margin-top: 0;
+  }
+}

@@ -2,36 +2,16 @@ import React, { useContext, useEffect, useState } from 'react';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import './Dashboard.css';
 import paper_thumbnail from '../../assets/paper-thumbnail.png';
+import student from '../../assets/student.png';
+import complete from '../../assets/complete.png';
 import axios from 'axios';
+import ViewResultPopup from '../../components/ViewResultPopup/ViewResultPopup';
 
 const Dashboard = () => {
-
   const [examScores, setExamScores] = useState([]);
   const [profilePicture, setProfilePicture] = useState("");
-
- /* useEffect(() => {
-    const token = localStorage.getItem("token");
-
-    const fetchProfilePicture = async () => {
-      try {
-        const response = await axios.get('http://localhost:4000/api/user/profile-picture', {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        });
-
-        if (response.data.success) {
-          setProfilePicture(response.data.profilePicture);
-        } else {
-          console.log("Failed to fetch profile picture:", response.data.message);
-        }
-      } catch (error) {
-        console.error("Error fetching profile picture:", error);
-      }
-    };
-
-    fetchProfilePicture();
-  },[]);*/
+  const [showPopup, setShowPopup] = useState(false);
+  const [selectedScore, setSelectedScore] = useState(null);
 
   useEffect(() => {
     const fetchExamScores = async () => {
@@ -71,15 +51,21 @@ const Dashboard = () => {
     fetchUserInfo();
   }, []);
 
+  const handleViewResults = (score) => {
+    setSelectedScore(score);
+    setShowPopup(true);
+  };
+
   return (
     <div className="dashboard-container">
       <Sidebar />
       <div className="dashboard-content">
         <div className="dashboard-top">
           <div className="user-info">
+            <img src={student} alt="User" />
             <div>
-            <h2>{userInfo.name}</h2>
-            <p>{userInfo.email}</p>
+              <h2>{userInfo.name}</h2>
+              <p>{userInfo.email}</p>
             </div>
           </div>
         </div>
@@ -97,23 +83,26 @@ const Dashboard = () => {
                     <p>GCE Ordinary Level 2024</p>
                   </div>
                 </div>
-                <button onClick={() => alert(`Score: ${score.score}`)}>View Results</button>
+                <button onClick={() => handleViewResults(score.score)}>View Results</button>
               </div>
             ))
           )}
         </div>
         <div className="statistics">
           <div className="stat">
-            <h3>No. of Completions</h3>
-            <p>{examScores.length} Papers</p>
-          </div>
-          <div className="stat">
-            <h3>No. of Downloads</h3>
-            <p>12 Papers</p>
+            <div className="stat-info">
+              <h3>No. of Completions</h3>
+              <p>{examScores.length} Papers</p>
+            </div>
+            <div className="stat-img">
+              <img src={complete} alt="Completed" />
+            </div>
           </div>
         </div>
       </div>
+      <ViewResultPopup show={showPopup} onClose={() => setShowPopup(false)} score={selectedScore} />
     </div>
   );
 }
+
 export default Dashboard;

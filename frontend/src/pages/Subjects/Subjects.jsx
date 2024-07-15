@@ -12,6 +12,10 @@ import englishlitImage from '../../assets/englishlit.png';
 import ictImage from '../../assets/ict.png';
 import healthImage from '../../assets/health.png';
 import homescienceImage from '../../assets/homescience.png';
+import artImage from '../../assets/art.png';
+import musicImage from '../../assets/music.png';
+import sinhalaImage from '../../assets/sinhala.png';
+import tamilImage from '../../assets/tamil.png';
 
 
 
@@ -32,6 +36,18 @@ const Subjects = () => {
             image: scienceImage,
         },
         {
+            id: 'English',
+            name: 'English',
+            description: 'Improve your language skills and literary knowledge.',
+            image: englishImage,
+        },
+        {
+            id: 'Sinhala',
+            name: 'Sinhala',
+            description: 'Improve your language skills and literary knowledge.',
+            image: sinhalaImage,
+        },
+        {
             id: 'History',
             name: 'History',
             description: 'Learn about past events and civilizations.',
@@ -43,12 +59,7 @@ const Subjects = () => {
             description: 'Explore the Earth\'s landscapes and environments.',
             image: geographyImage,
         },
-        {
-            id: 'English',
-            name: 'English',
-            description: 'Improve your language skills and literary knowledge.',
-            image: englishImage,
-        },
+       
         {
             id: 'Commerce',
             name: 'Commerce',
@@ -85,6 +96,25 @@ const Subjects = () => {
             description: 'Develop skills in managing a household and family well-being.',
             image: homescienceImage,
         },
+        {
+            id: 'Tamil',
+            name: 'Tamil',
+            description: 'Improve your language skills and literary knowledge.',
+            image:tamilImage,
+        },
+        {
+            id: 'Art',
+            name: 'Art',
+            description: 'Improve your language skills and literary knowledge.',
+            image: artImage,
+        },
+        {
+            id: 'Music',
+            name: 'Music',
+            description: 'Improve your language skills and literary knowledge.',
+            image: musicImage,
+        },
+
     ];
 
     return (

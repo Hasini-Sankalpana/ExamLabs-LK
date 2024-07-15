@@ -6,7 +6,13 @@
   background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
   font-family: "Roboto", sans-serif;
 }
-
+ .exams-content img {
+  width: 200px;
+  height: auto;
+  position: absolute;
+  top: 50px;
+  right: 120px;
+ }
 .exams-content::-webkit-scrollbar {
   width: 0; /* Remove scrollbar width */
   background: transparent; /* Optional: make scrollbar background transparent */

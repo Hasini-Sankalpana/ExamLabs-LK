@@ -120,6 +120,8 @@ const Add = ({ onAddItem }) => {
               <select value={subject} onChange={(e) => setSubject(e.target.value)} required>
                 <option value="Math">Math</option>
                 <option value="Science">Science</option>
+                <option value="English">English</option>
+                <option value="Sinhala">Sinhala</option>
                 <option value="History">History</option>
                 <option value="Geography">Geography</option>
                 <option value="Commerce">Commerce</option>
@@ -128,6 +130,11 @@ const Add = ({ onAddItem }) => {
                 <option value="ICT">ICT</option>
                 <option value="Health">Health and physical sciences</option>
                 <option value="HomeEconomics">Home Economics</option>
+                <option value="Tamil">Tamil</option>
+                <option value="Art">Art</option>
+                <option value="Music">Music</option>
+
+
               </select>
             </div>
             <div className="form-group">

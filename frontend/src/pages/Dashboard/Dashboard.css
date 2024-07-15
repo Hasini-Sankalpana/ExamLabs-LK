@@ -29,8 +29,8 @@
   
   .dashboard-top img {
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
   }
 
   .dashboard-top h2 {
@@ -170,6 +170,17 @@
     flex: 1;
     margin-right: 20px;
   }
+  .stat {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .stat-img img {
+   width: 100px;
+   height: auto;
+   margin-top: -60px;
+  }
   
   .statistics .stat:last-child {
     margin-right: 0;
@@ -183,3 +194,46 @@
     margin: 0;
   }
   
+  @media only screen and (max-width: 768px) {
+    .dashboard-top {
+      margin-bottom: 10px; /* Adjusted margin */
+    }
+  
+    .dashboard-top img {
+      width: 60px; /* Reduced image size */
+      height: 60px; /* Reduced image size */
+    }
+  
+    .dashboard-top h2 {
+      font-size: 24px; /* Adjusted font size */
+    }
+  
+    .dashboard-top p {
+      font-size: 14px; /* Adjusted font size */
+    }
+  
+    .completed-papers {
+      max-height: 200px; /* Reduced max-height */
+    }
+  
+    .completed-papers .paper .info img {
+      width: 30px; /* Reduced image size */
+      height: 30px; /* Reduced image size */
+    }
+  
+    .completed-papers .paper .info h4 {
+      font-size: 14px; /* Adjusted font size */
+    }
+  
+    .completed-papers .view-all a {
+      font-size: 12px; /* Adjusted font size */
+    }
+  
+    .community h3 {
+      font-size: 16px; /* Adjusted font size */
+    }
+  
+    .statistics .stat {
+      margin-bottom: 10px; /* Adjusted space between stats */
+    }
+  }

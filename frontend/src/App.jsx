@@ -14,6 +14,8 @@ import MarkingSchemes from './pages/MarkingSchemes/MarkingSchemes'
 import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy'
 import Subject from './pages/Subject/Subject'
 import Subjects from './pages/Subjects/Subjects'
+import About from './components/AboutUs/AboutUs'
+import AboutUs from './components/AboutUs/AboutUs'
 
 
 
@@ -37,6 +39,8 @@ const App = () => {
           <Route path='/privacy-policy' element={<PrivacyPolicy />} />
           <Route path="/subjects" element={<Subjects />} />
           <Route path="/subjects/:subject" element={<Subject />} />
+          
+
         </Routes>
     </div>
    

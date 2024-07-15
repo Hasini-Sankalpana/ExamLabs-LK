@@ -66,18 +66,21 @@ const MarkingSchemes = () => {
             <h2>Marking Schemes</h2>
             <div className="filter-container">
                 <select onChange={(e) => setSubject(e.target.value)} value={subject}>
-                    <option value="">All Subjects</option>
-                    <option value="Math">Math</option>
-                    <option value="Science">Science</option>
-                    <option value="History">History</option>
-                    <option value="Geography">Geography</option>
-                    <option value="English">English</option>
-                    <option value="Commerce">Commerce</option>
-                    <option value="Citizenship">Citizenship Education</option>
-                    <option value="EnglishLit">English Literature</option>
-                    <option value="ICT">ICT</option>
-                    <option value="Health">Health and Physical Education</option>
-                    <option value="HomeEconomics">Home Economics</option>
+                <option value="Math">Math</option>
+                <option value="Science">Science</option>
+                <option value="English">English</option>
+                <option value="Sinhala">Sinhala</option>
+                <option value="History">History</option>
+                <option value="Geography">Geography</option>
+                <option value="Commerce">Commerce</option>
+                <option value="Citizenship">Citizenship Studies</option>
+                <option value="EnglishLit">English Literature</option>
+                <option value="ICT">ICT</option>
+                <option value="Health">Health and physical sciences</option>
+                <option value="HomeEconomics">Home Economics</option>
+                <option value="Tamil">Tamil</option>
+                <option value="Art">Art</option>
+                <option value="Music">Music</option>
                 </select>
                 <select onChange={(e) => setYear(e.target.value)} value={year}>
                     <option value="">All Years</option>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Sidebar from '../../components/Sidebar/Sidebar';
+import fav from '../../assets/fav.png'
 import './Favorites.css';
 
 const Favorites = () => {
@@ -74,6 +75,7 @@ const Favorites = () => {
                     <p>No favorite papers yet. Add some to see them here!</p>
                 </div>
             )}
+            <img src={fav}/>
         </div>
     </div>
 );

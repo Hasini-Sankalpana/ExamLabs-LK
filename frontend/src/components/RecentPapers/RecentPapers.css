@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
 
 
 .recent-papers {
@@ -11,13 +12,14 @@
   .recent-papers h2 {
     font-size: 40px;
     margin-bottom: 20px;
+    font-family: "Caveat", cursive;
   }
   
   .papers-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    justify-content: start;
+    gap: 25px;
+    justify-content: center;
     margin-bottom: 20px;
   }
   
@@ -108,29 +110,35 @@
       width: 90%; /* Adjust width for smaller screens */
     }
   
+    .papers-list {
+      justify-content: center; 
+      margin-left: 10%;/* Center content */
+    }
+  
     .paper-item {
-      width: 100%; 
-      max-width: none; 
+      width: 100%;
+      max-width: none;
     }
   }
   
   @media (max-width: 576px) {
     .recent-papers {
-      width: 100%; 
-      padding: 10px; 
+      width: 100%;
+      padding: 10px;
     }
   
     .papers-list {
-      gap: 10px; 
+      gap: 10px;
     }
   
     .paper-item {
-      width: calc(50% - 10px); 
+      width: calc(50% - 10px);
     }
   }
   
   @media (max-width: 400px) {
     .paper-item {
       width: 100%;
+    }
   }
-}
+  

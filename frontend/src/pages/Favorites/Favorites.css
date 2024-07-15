@@ -6,7 +6,7 @@
   display: flex;
   height: 100vh;
   font-family: "Roboto", sans-serif;
-  background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+  background-color: linear-gradient(to top, #dfe9f3 0%, white 100%);
   
 }
 
@@ -20,6 +20,15 @@
   margin-left: 3%;
   margin-right: 1%; 
   overflow-y: auto;
+}
+
+.favorites-content img {
+  width: 200px;
+  height: auto;
+  position: absolute;
+  top: 20px;
+  right: 120px;
+  z-index: -1;
 }
 .favorites-content::-webkit-scrollbar {
   width: 0;

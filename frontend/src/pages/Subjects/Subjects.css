@@ -10,6 +10,7 @@
 
 .subject-cards {
     margin-top: 20px;
+    margin-bottom: 50px;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -37,6 +38,8 @@
 
 .subject-card:hover {
     transform: scale(1.05);
+   background-color:#002244;
+    color: white;
 }
 
 .subject-card h3 {
@@ -55,3 +58,66 @@
     height: 60%;
     border-radius: 8px;
 }
+
+@media (max-width: 1200px) {
+    .subject-card {
+      width: 45%;
+      height: auto;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .subject-card {
+      width: 48%;
+      height: auto;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .subject-container {
+      width: 90%;
+      padding: 15px;
+    }
+  
+    .subject-card {
+      width: 100%;
+      height: auto;
+    }
+  
+    .subject-card img {
+      height: auto;
+    }
+  
+    .subject-card h3 {
+      font-size: 1.1rem;
+    }
+  
+    .subject-card p {
+      font-size: 0.85em;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .subject-container {
+      width: 95%;
+      padding: 10px;
+    }
+  
+    .subject-card {
+      width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+  
+    .subject-card img {
+      height: auto;
+    }
+  
+    .subject-card h3 {
+      font-size: 1rem;
+    }
+  
+    .subject-card p {
+      font-size: 0.8em;
+    }
+  }

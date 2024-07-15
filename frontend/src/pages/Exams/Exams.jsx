@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Sidebar from '../../components/Sidebar/Sidebar';
+import examsimg from '../../assets/exam.png'
 import './Exams.css';
 
 const Exams = () => {
@@ -102,7 +103,9 @@ const Exams = () => {
             ))}
           </div>
         </div>
+        <img src={examsimg} alt="" />
       </div>
+   
     </div>
   
   );

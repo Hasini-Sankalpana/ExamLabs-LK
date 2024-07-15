@@ -6,6 +6,7 @@ import './UserOverview.css';
 // Importing libraries for generating reports
 import { saveAs } from 'file-saver';
 import * as XLSX from 'xlsx';
+import { Document, Packer, Paragraph, TextRun } from 'docx';
 
 const UserOverview = () => {
   const [stats, setStats] = useState({
@@ -13,6 +14,7 @@ const UserOverview = () => {
     totalMCQs: 0,
     totalEssayExams: 0,
     totalPDFs: 0,
+    totalMarkingSchemes: 0,
   });
 
   useEffect(() => {
@@ -30,7 +32,6 @@ const UserOverview = () => {
     fetchStats();
   }, []);
 
-  
   // Function to generate and download XLSX report
   const downloadXlsxReport = () => {
     const data = [
@@ -49,6 +50,55 @@ const UserOverview = () => {
 
     const blob = new Blob([wbout], { type: 'application/octet-stream' });
     saveAs(blob, 'Statistics_Report.xlsx');
+  };
+
+  // Function to generate and download DOCX report
+  const downloadDocxReport = () => {
+    const doc = new Document({
+      sections: [
+        {
+          children: [
+            new Paragraph({
+              children: [
+                new TextRun({
+                  text: 'Statistics Report',
+                  bold: true,
+                  size: 28,
+                }),
+              ],
+            }),
+            new Paragraph({
+              children: [
+                new TextRun({
+                  text: `Total Users: ${stats.totalUsers}`,
+                  break: 1,
+                }),
+                new TextRun({
+                  text: `Total MCQs: ${stats.totalMCQs}`,
+                  break: 1,
+                }),
+                new TextRun({
+                  text: `Total Essay Quizes: ${stats.totalEssayExams}`,
+                  break: 1,
+                }),
+                new TextRun({
+                  text: `Total Papers: ${stats.totalPDFs}`,
+                  break: 1,
+                }),
+                new TextRun({
+                  text: `Total Marking Schemes: ${stats.totalMarkingSchemes}`,
+                  break: 1,
+                }),
+              ],
+            }),
+          ],
+        },
+      ],
+    });
+
+    Packer.toBlob(doc).then(blob => {
+      saveAs(blob, 'Statistics_Report.docx');
+    });
   };
 
   return (
@@ -76,11 +126,13 @@ const UserOverview = () => {
           <p>{stats.totalMarkingSchemes}</p>
         </div>
         <div className='download-buttons'>
-          <button onClick={downloadXlsxReport}>Download Report</button>
+          <button onClick={downloadXlsxReport}>Download Excel Report</button>
+          <button onClick={downloadDocxReport}>Download DOCX Report</button>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default UserOverview;
+
