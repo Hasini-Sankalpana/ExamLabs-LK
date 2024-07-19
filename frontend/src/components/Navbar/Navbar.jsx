@@ -10,7 +10,7 @@ const Navbar = ({setShowLogin}) => {
        const [menu, setMenu] = useState("Home");
        const {token,setToken } = useContext(StoreContext);
        const [profilePicture, setProfilePicture] = useState(""); // Default profile picture
-       const [papersDropdown, setPapersDropdown] = useState(false);
+
 
        const navigate = useNavigate();
    
@@ -55,18 +55,7 @@ const Navbar = ({setShowLogin}) => {
 
             <ul className="navlist" >
                 <Link to='/'><li onClick={() =>setMenu("Home")} className={menu == "Home"?"active":""}>Home</li></Link>
-                <a href='#subjects' onClick={() =>setMenu("Subjects")} className={menu == "Subjects"?"active":""}>Subjects</a>
-                <div className="dropdown">
-                   <a href='#' onClick={() => setPapersDropdown(!papersDropdown)} className={menu === "Papers" ? "active" : ""}>
-                       Papers <i className="ri-arrow-down-s-line"></i>
-                   </a>
-                   {papersDropdown && (
-                       <div className="dropdown-content">
-                           <li onClick={() => navigate('/subjects')}><p>Past Papers</p></li>
-                           <li onClick={() => navigate('/marking-schemes')}><p>Marking Schemes</p></li>
-                       </div>
-                   )}
-               </div>
+                <Link to='/subjects'><li onClick={() =>setMenu("Subjects")} className={menu == "Subjects"?"active":""}>Subjects</li></Link>
                 <a href='#about-content' onClick={() =>setMenu("About")} className={menu == "About"?"active":""}>About</a>
                  <a href='#footer' onClick={() =>setMenu("Contact")} className={menu == "Contact"?"active":""}>Contact</a>
             </ul>

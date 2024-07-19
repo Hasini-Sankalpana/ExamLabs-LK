@@ -64,8 +64,14 @@ const Favorites = () => {
                                 <h2>{paper.paperName}</h2>
                             </div>
                             <div>
+                                <div className="favorite-btn">
+                                <div className="download-btn">
                                 <button onClick={() => handleDownload(paper.file)}>Download</button>
+                                </div>
+                                <div className="remove-btn">
                                 <button onClick={() => removeFavorite(paper.paperId)}>Remove</button>
+                                </div>
+                                </div>
                             </div>
                         </li>
                     ))}

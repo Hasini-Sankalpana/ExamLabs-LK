@@ -8,11 +8,25 @@
 }
 
 .papers-list {
-    margin-top: 20px;
+    margin-top: 30px;
+
+}
+
+.paper-content {
+    margin-top: 40px;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: start;
+    margin-left: -8%;
+}
+.paper-content-marking {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: start;
+    margin-left: -14%;
 }
 
 .paper-item {

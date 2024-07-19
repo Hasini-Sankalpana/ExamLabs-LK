@@ -80,7 +80,12 @@
   color: #777;
 }
 
-.favorite-item button {
+.favorite-btn  {
+  display: flex;
+  flex-direction: row;
+}
+
+.download-btn button {
   padding: 10px 20px;
   background-color:  rgb(6, 6, 105);
   color: white;
@@ -91,10 +96,26 @@
   transition: transform 0.2s;
 }
 
-.favorite-item button:hover {
+.remove-btn button {
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: 20px;
+  transition: transform 0.2s;
+  background-color: tomato;
+}
+
+.download-btn button:hover {
   background-color: rgb(4, 4, 59);
   transform: scale(1.05);
 }
+.remove-btn button:hover {
+  background-color: rgb(218, 49, 19);
+  transform: scale(1.05);
+}
+
 
 /* Favorites.css */
 
