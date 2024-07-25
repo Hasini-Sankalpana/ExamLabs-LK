@@ -58,7 +58,7 @@
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow-y: auto; /* Add scrollbar for vertical overflow */
-    height:350px; /* Adjust max height as needed */
+    height:318px; /* Adjust max height as needed */
 
   }
 
@@ -136,24 +136,6 @@
   transition: all ease .50s;
 }
 
-
-  
-  /* Community section styles */
-  .community {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-  }
-  
-  .community h3 {
-    margin-bottom: 10px;
-  }
-  
-  .community p {
-    margin: 0;
-  }
   
   /* Statistics section styles */
   .statistics {
@@ -196,12 +178,11 @@
   
   @media only screen and (max-width: 768px) {
     .dashboard-top {
-      margin-bottom: 10px; /* Adjusted margin */
+      margin-bottom: 10px;
     }
   
     .dashboard-top img {
-      width: 60px; /* Reduced image size */
-      height: 60px; /* Reduced image size */
+      display: none;
     }
   
     .dashboard-top h2 {
@@ -213,27 +194,154 @@
     }
   
     .completed-papers {
-      max-height: 200px; /* Reduced max-height */
+     height: 500px;
     }
   
     .completed-papers .paper .info img {
-      width: 30px; /* Reduced image size */
-      height: 30px; /* Reduced image size */
+      width: 20px; /* Reduced image size */
+      height: 20px; /* Reduced image size */
     }
-  
+    .completed-papers button {
+      width: 70px;
+      padding: 2px 1px;
+    }
     .completed-papers .paper .info h4 {
-      font-size: 14px; /* Adjusted font size */
+      font-size: 12px; /* Adjusted font size */
     }
   
     .completed-papers .view-all a {
       font-size: 12px; /* Adjusted font size */
     }
   
-    .community h3 {
-      font-size: 16px; /* Adjusted font size */
-    }
   
     .statistics .stat {
       margin-bottom: 10px; /* Adjusted space between stats */
     }
   }
+
+  @media (max-width: 768px) {
+    .dashboard-container {
+      flex-direction: column;
+    }
+  
+    .dashboard-content {
+      margin-left: 0;
+      margin-right: 0;
+      padding: 10px;
+    }
+  
+    .dashboard-top {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .dashboard-top img {
+      display: none;
+    }
+  
+    .dashboard-top h2 {
+      font-size: 24px;
+    }
+  
+    .dashboard-top p {
+      font-size: 14px;
+    }
+  
+    .dashboard-top .user-info {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 10px;
+    }
+  
+    .dashboard-top .user-info div {
+      margin-left: 0;
+      margin-top: 10px;
+    }
+  
+    .completed-papers {
+      height: 500px;
+      padding: 10px;
+    }
+  
+    .completed-papers .paper .info img {
+      width: 30px;
+      height: 30px;
+    }
+  
+    .completed-papers .paper .info h4 {
+      font-size: 14px;
+    }
+  
+    .completed-papers .view-all a {
+      font-size: 12px;
+    }
+  
+    .statistics {
+      flex-direction: column;
+    }
+  
+    .statistics .stat {
+      margin-right: 0;
+      margin-bottom: 10px;
+      padding: 10px;
+    }
+  
+    .stat {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .stat-img img {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .dashboard-top img {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .dashboard-top h2 {
+      font-size: 20px;
+    }
+  
+    .dashboard-top p {
+      font-size: 12px;
+    }
+  
+    .completed-papers {
+      height: 500px;
+      padding: 5px;
+    }
+  
+    .completed-papers .paper .info img {
+      width: 20px;
+      height: 20px;
+    }
+  
+    .completed-papers .paper .info h4 {
+      font-size: 12px;
+    }
+  
+    .completed-papers .view-all a {
+      font-size: 10px;
+    }
+  
+    .community {
+      padding: 5px;
+    }
+  
+    .community h3 {
+      font-size: 14px;
+    }
+  
+    .statistics .stat {
+      padding: 5px;
+    }
+  
+    .stat-img img {
+      display: none;
+    }
+  }
+  

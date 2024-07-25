@@ -9,7 +9,6 @@
  .exams-content img {
   width: 200px;
   height: auto;
-  position: absolute;
   top: 50px;
   right: 120px;
  }
@@ -56,8 +55,18 @@
   background-color: #45a049;
 }
 
-.questions-section {
-  margin-top: 20px;
+.questions-section,.questions-section2  {
+  margin-top: 50px;
+}
+
+.questions-section h2,.questions-section2 h2 {
+  background-color: rgb(129, 215, 239);
+  border-radius: 4px;
+  padding: 5px 20px;
+} 
+
+.questions-section2 {
+  margin-top: 50px;
 }
 
 .mcq-container, .essay-container {
@@ -78,7 +87,7 @@
   transition: transform 0.2s;
   cursor: pointer;
   width: 270px;
-  height: 160px;
+  height:160px;
 }
 
 .mcq-block:hover, .essay-block:hover {
@@ -95,7 +104,7 @@
   color: #555;
   margin: 0 0 15px;
   display: -webkit-box;
-  -webkit-line-clamp: 2; /* Number of lines to show */
+  -webkit-line-clamp: 1; /* Number of lines to show */
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -104,8 +113,8 @@
   padding: 10px 15px;
   background-color: #21105e;
   color: white;
+  margin-top: auto; 
   border: none;
-  margin-top: 12px;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -113,4 +122,92 @@
 
 .mcq-block button, .essay-block button:hover {
   background-color: #0f1553;
+}
+
+/* Base styles as provided earlier */
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+  .exams-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .sidebar {
+   display: none;
+  }
+
+  .exams-content img {
+    display: none;
+  }
+
+  .exams-content {
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .exams-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .filter-container {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .filter-container select, .filter-container button {
+    width: 100%;
+  }
+
+  .questions-section, .questions-section2 {
+    margin-top: 20px;
+  }
+
+  .questions-section h2, .questions-section2 h2 {
+    font-size: 1.2rem;
+    padding: 10px;
+  }
+
+  .mcq-container, .essay-container {
+    justify-content: center;
+  }
+
+  .mcq-block, .essay-block {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .exams-content img {
+    width: 100px;
+    top: 10px;
+    right: 10px;
+  }
+
+  .exams-header h1 {
+    font-size: 1.2rem;
+  }
+
+  .filter-container select, .filter-container button {
+    padding: 8px;
+  }
+
+  .questions-section h2, .questions-section2 h2 {
+    font-size: 1rem;
+    padding: 8px;
+  }
+
+  .mcq-block h3, .essay-block h3 {
+    font-size: 16px;
+  }
+
+  .mcq-block p, .essay-block p {
+    font-size: 12px;
+  }
+
+  .mcq-block button, .essay-block button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
 }

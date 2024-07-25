@@ -46,9 +46,7 @@ const RecentPapers = () => {
           </div>
         ))}
       </div>
-      <Link to="/subjects" className="view-all">
-        View All Papers
-      </Link>
+      
     </div>
   );
 };

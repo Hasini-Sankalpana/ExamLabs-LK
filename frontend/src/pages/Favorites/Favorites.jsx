@@ -65,7 +65,7 @@ const Favorites = () => {
                             </div>
                             <div>
                                 <div className="favorite-btn">
-                                <div className="download-btn">
+                                <div className="download-button">
                                 <button onClick={() => handleDownload(paper.file)}>Download</button>
                                 </div>
                                 <div className="remove-btn">

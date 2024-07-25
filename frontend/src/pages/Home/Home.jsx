@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import './Home.css';
 import Header from '../../components/Header/Header';
 import AppDownload from '../../components/AppDownload/AppDownload';
-import About from '../../components/About/About';
 import Subjects from '../../components/Subjects/Subjects';
 import { StoreContext } from '../../context/StoreContext';
 import RecentPapers from '../../components/RecentPapers/RecentPapers';

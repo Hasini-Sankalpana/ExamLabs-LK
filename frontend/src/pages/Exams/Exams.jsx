@@ -89,7 +89,7 @@ const Exams = () => {
             ))}
           </div>
         </div>
-        <div className="questions-section">
+        <div className="questions-section2">
           <h2>Structured Essay Questions</h2>
           <div className="essay-container">
             {filteredEssays.map((essay, index) => (
@@ -103,7 +103,6 @@ const Exams = () => {
             ))}
           </div>
         </div>
-        <img src={examsimg} alt="" />
       </div>
    
     </div>

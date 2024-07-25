@@ -22,7 +22,7 @@ const Dashboard = () => {
             Authorization: `Bearer ${token}`
           }
         });
-        setExamScores(response.data.examScores);
+        setExamScores(response.data.examScores.reverse());
       } catch (error) {
         console.error("Error fetching exam scores:", error);
       }

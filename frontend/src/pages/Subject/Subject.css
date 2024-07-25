@@ -5,15 +5,19 @@
   width: 80%;
   margin: auto;
   font-family: "Roboto", sans-serif;
+  justify-content: start;
 }
 
 .papers-list {
-    margin-top: 30px;
+    display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: start;
 
 }
 
 .paper-content {
-    margin-top: 40px;
+    margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -36,7 +40,7 @@
   overflow: hidden;
   width: 200px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
+  transition: transform 0.1s;
   text-align: center;
   height: 350px;
 }
@@ -61,8 +65,12 @@
 }
 
 .paper-info p {
-    font-size: 0.9em;
-    color: #666;
+    font-size: 14px;
+    color: #555;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Number of lines to show */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .paper-info a button
@@ -82,6 +90,12 @@
 
 .paper-info button.fav-btn {
     background-color: rgb(46, 173, 46);
+    margin-top: 10px;
+    padding: 10px;
+    width: 140px;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 .paper-info button.fav-btn:hover {

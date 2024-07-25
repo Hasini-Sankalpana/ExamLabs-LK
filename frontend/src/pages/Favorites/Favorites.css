@@ -85,7 +85,7 @@
   flex-direction: row;
 }
 
-.download-btn button {
+.download-button button {
   padding: 10px 20px;
   background-color:  rgb(6, 6, 105);
   color: white;
@@ -107,7 +107,7 @@
   background-color: tomato;
 }
 
-.download-btn button:hover {
+.download-button button:hover {
   background-color: rgb(4, 4, 59);
   transform: scale(1.05);
 }
