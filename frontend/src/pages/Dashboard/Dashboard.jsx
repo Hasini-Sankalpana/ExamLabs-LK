@@ -6,6 +6,7 @@ import student from '../../assets/student.png';
 import complete from '../../assets/complete.png';
 import axios from 'axios';
 import ViewResultPopup from '../../components/ViewResultPopup/ViewResultPopup';
+import { StoreContext } from '../../context/StoreContext';
 
 const Dashboard = () => {
   const [examScores, setExamScores] = useState([]);

@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Subjects.css';
 import { Link } from 'react-router-dom';
+import { FaSearch } from 'react-icons/fa';
 import mathImage from '../../assets/Maths.png';
 import scienceImage from '../../assets/science.png';
 import historyImage from '../../assets/history.png';
@@ -17,11 +18,9 @@ import musicImage from '../../assets/music.png';
 import sinhalaImage from '../../assets/sinhala.png';
 import tamilImage from '../../assets/tamil.png';
 
-
-
-
-
 const Subjects = () => {
+    const [searchTerm, setSearchTerm] = useState('');
+
     const subjects = [
         {
             id: 'Math',
@@ -59,7 +58,6 @@ const Subjects = () => {
             description: 'Explore the Earth\'s landscapes and environments.',
             image: geographyImage,
         },
-       
         {
             id: 'Commerce',
             name: 'Commerce',
@@ -73,7 +71,7 @@ const Subjects = () => {
             image: civicImage,
         },
         {
-            id: 'EnglishLit',
+            id: 'English Literature',
             name: 'English Literature',
             description: 'Delve into classic and modern literary works.',
             image: englishlitImage,
@@ -85,13 +83,13 @@ const Subjects = () => {
             image: ictImage,
         },
         {
-            id: 'Health',
+            id: 'Health and Physical Education',
             name: 'Health and Physical Education',
             description: 'Learn about maintaining a healthy lifestyle and physical fitness.',
             image: healthImage,
         },
         {
-            id: 'HomeEconomics',
+            id: 'Home Economics',
             name: 'Home Economics',
             description: 'Develop skills in managing a household and family well-being.',
             image: homescienceImage,
@@ -100,7 +98,7 @@ const Subjects = () => {
             id: 'Tamil',
             name: 'Tamil',
             description: 'Improve your language skills and literary knowledge.',
-            image:tamilImage,
+            image: tamilImage,
         },
         {
             id: 'Art',
@@ -114,19 +112,32 @@ const Subjects = () => {
             description: 'Improve your language skills and literary knowledge.',
             image: musicImage,
         },
-
     ];
+
+    const filteredSubjects = subjects.filter(subject =>
+        subject.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
 
     return (
         <div className="subject-container" style={{ maxWidth: '80%', margin: 'auto' }}>
-            <h2>Subjects</h2>
+            <div className="subject-header">
+                <h2>Subjects</h2>
+                <div className="subject-search">
+                    <input
+                        type="text"
+                        placeholder="Search subjects..."
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                    <FaSearch />
+                </div>
+            </div>
             <div className="subject-cards">
-                {subjects.map(subject => (
+                {filteredSubjects.map(subject => (
                     <Link to={`/subjects/${subject.id}`} key={subject.id} className="subject-card-link">
                         <div className="subject-card">
                             <img src={subject.image} alt={subject.name} />
                             <h3>{subject.name}</h3>
-                            
                         </div>
                     </Link>
                 ))}
@@ -136,4 +147,3 @@ const Subjects = () => {
 };
 
 export default Subjects;
-

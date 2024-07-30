@@ -56,8 +56,8 @@ const Navbar = ({setShowLogin}) => {
             <ul className="navlist" >
                 <Link to='/'><li onClick={() =>setMenu("Home")} className={menu == "Home"?"active":""}>Home</li></Link>
                 <Link to='/subjects'><li onClick={() =>setMenu("Subjects")} className={menu == "Subjects"?"active":""}>Subjects</li></Link>
-                <a href='#about-content' onClick={() =>setMenu("About")} className={menu == "About"?"active":""}>About</a>
-                 <a href='#footer' onClick={() =>setMenu("Contact")} className={menu == "Contact"?"active":""}>Contact</a>
+                <Link to='/aboutus'><li onClick={() =>setMenu("About")} className={menu == "About"?"active":""}>About</li></Link>
+                <Link to='/contact'><li onClick={() =>setMenu("Contact")} className={menu == "Contact"?"active":""}>Contact</li></Link>
             </ul>
        
             {!token?  <button onClick={() => setShowLogin(true)}>Sign In</button>  

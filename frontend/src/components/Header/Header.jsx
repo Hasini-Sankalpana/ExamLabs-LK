@@ -23,9 +23,7 @@ const Header = ({ token, setShowLogin }) => {
         <p>Practice official past papers from GCE,cambridge,Edexel,AQA,OCR etc and practice <br /> over 10000 high quality questions.</p>
         <button onClick={handleGetStarted}>Get Started </button>
       </div>
-      <div className="header-img">
-        <img src={user_img} alt="" />
-      </div>
+     
     </div>
   )
 }

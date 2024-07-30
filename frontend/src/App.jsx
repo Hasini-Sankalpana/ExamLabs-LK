@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Navbar from './components/Navbar/Navbar'
 import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home/Home'
@@ -12,13 +12,15 @@ import GetExam from './pages/GetExam/GetExam'
 import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy'
 import Subject from './pages/Subject/Subject'
 import Subjects from './pages/Subjects/Subjects'
-
-
+import AboutUs from './pages/AboutUs/AboutUs'
+import { StoreContext } from './context/StoreContext'
+import Contact from './pages/Contact/Contact'
 
 
 const App = () => {
 
   const [showLogin, setShowLogin] = useState(false);
+  const { token } = useContext(StoreContext); 
   return (
     <>
     {showLogin?<LoginPopup setShowLogin={setShowLogin}/>:<></>}
@@ -26,6 +28,8 @@ const App = () => {
      <Navbar setShowLogin={setShowLogin}/> 
         <Routes>
           <Route path='/' element={<Home setShowLogin={setShowLogin}/>} />
+          <Route path='/aboutus' element={ <AboutUs token={token} setShowLogin={setShowLogin}/>} />  
+          <Route path='/contact' element={<Contact/>} />
           <Route path='/dashboard' element={<Dashboard/>} />
           <Route path='/exams' element={<Exams/>} />
           <Route path="/exams/:id" element={<GetExam />} />

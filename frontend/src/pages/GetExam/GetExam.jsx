@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 import './GetExam.css';
 import { jsPDF } from 'jspdf';
+import { FaCheck, FaTimes } from 'react-icons/fa'; 
 
 const GetExam = () => {
   const { id } = useParams();
@@ -204,7 +205,7 @@ const [showReport, setShowReport] = useState(false);
                     ...question,
                     type: 'correct',
                     index
-                  })), 
+                  })),
                   ...wrongAnswers.map((question, index) => ({
                     ...question,
                     type: 'wrong',
@@ -212,11 +213,20 @@ const [showReport, setShowReport] = useState(false);
                   }))].sort((a, b) => a.index - b.index).map((question, index) => (
                     <div
                       key={index}
-                      className={`answer ${question.type}`}
+                      className={`answer-container ${question.type}`}
                     >
-                      <p>Question: {question.question}</p>
-                      <p>Your Answer: {selectedOptions[question.index]}</p>
-                      <p>Correct Answer: {question.answer}</p>
+                      <p className="question-text">Question: {question.question}</p>
+                      <p className="answer-text">
+                        Your Answer: {selectedOptions[question.index]}
+                        {question.type === 'correct' ? (
+                          <FaCheck className="correct-icon" />
+                        ) : (
+                          <FaTimes className="wrong-icon" />
+                        )}
+                      </p>
+                      {question.type === 'wrong' && (
+                        <p className="correct-answer-text">Correct Answer: {question.answer}</p>
+                      )}
                     </div>
                   ))}
                 </div>
@@ -228,10 +238,8 @@ const [showReport, setShowReport] = useState(false);
         )}
       </div>
     );
-    
+
   }
-  
-  
 
   const currentQuestion = exam.option === 'mcq' ? exam.questions[currentQuestionIndex] : exam.essayQuestions[currentQuestionIndex];
 

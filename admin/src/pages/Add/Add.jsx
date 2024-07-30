@@ -126,10 +126,10 @@ const Add = ({ onAddItem }) => {
                 <option value="Geography">Geography</option>
                 <option value="Commerce">Commerce</option>
                 <option value="Citizenship">Citizenship Studies</option>
-                <option value="EnglishLit">English Literature</option>
+                <option value="English Literature">English Literature</option>
                 <option value="ICT">ICT</option>
-                <option value="Health">Health and physical sciences</option>
-                <option value="HomeEconomics">Home Economics</option>
+                <option value="Health and Physical Education">Health and physical sciences</option>
+                <option value="Home Economics">Home Economics</option>
                 <option value="Tamil">Tamil</option>
                 <option value="Art">Art</option>
                 <option value="Music">Music</option>

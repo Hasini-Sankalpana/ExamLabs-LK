@@ -8,13 +8,41 @@
   background:transparent;
 }
 
+.subject-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.subject-search {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: #fff;
+}
+
+.subject-search input {
+  border: none;
+  outline: none;
+  padding: 5px;
+  margin-right: 5px;
+}
+
+.subject-search svg {
+  color: #888;
+}
+
+
 .subject-cards {
     margin-top: 20px;
     margin-bottom: 50px;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: center;
+    justify-content: start;
 }
 
 .subject-card-link {
