@@ -8,7 +8,7 @@ import comm_03 from '../../assets/comm_03.png';
 const AboutUs = ({ token, setShowLogin }) => {
   const navigate = useNavigate();
 
-  useEffect(() => {
+  /*useEffect(() => {
     const handleScroll = () => {
       const aboutSections = document.querySelectorAll('.abouts');
       aboutSections.forEach(section => {
@@ -25,7 +25,7 @@ const AboutUs = ({ token, setShowLogin }) => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, []);*/
 
   const handleGetStarted = () => {
     if (token) {

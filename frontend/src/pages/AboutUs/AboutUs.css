@@ -32,7 +32,7 @@
   margin-bottom: 20px;
 }
 
-.about-info, .about-infoo, .about-img, .about-imgg {
+/*.about-info, .about-infoo, .about-img, .about-imgg {
   opacity: 0;
   transition: all 0.5s ease-in-out;
 }
@@ -45,7 +45,7 @@
 
 .about-img, .about-imgg {
   transform: translateX(100px);
-}
+}*/
 
 .about-info.visible, .about-infoo.visible {
   opacity: 1;
