@@ -126,3 +126,56 @@ export const getItemById = async (req, res) => {
   }
 };
 
+export const updateItem = async (req, res) => {
+  const { id } = req.params;
+  const { name, description, option, questions, essayQuestions, subject, year } = req.body;
+  const file = req.files?.file?.[0]?.path || null;
+  const markingSchemeFile = req.files?.markingSchemeFile?.[0]?.path || null;
+
+  try {
+    const item = await Item.findById(id);
+
+    if (!item) {
+      return res.status(404).json({ message: 'Item not found' });
+    }
+
+    item.name = name || item.name;
+    item.description = description || item.description;
+    item.option = option || item.option;
+    item.subject = subject || item.subject;
+    item.year = year || item.year;
+
+    if (file) {
+      // Delete old file if exists
+      if (item.file) {
+        try {
+          fs.unlinkSync(path.join(__dirname, '..', item.file));
+        } catch (fileError) {
+          console.error('Error deleting file:', fileError);
+        }
+      }
+      item.file = file;
+    }
+
+    if (markingSchemeFile) {
+      // Delete old marking scheme file if exists
+      if (item.markingSchemeFile) {
+        try {
+          fs.unlinkSync(path.join(__dirname, '..', item.markingSchemeFile));
+        } catch (markingSchemeFileError) {
+          console.error('Error deleting marking scheme file:', markingSchemeFileError);
+        }
+      }
+      item.markingSchemeFile = markingSchemeFile;
+    }
+
+    item.questions = option === 'mcq' ? JSON.parse(questions) : item.questions;
+    item.essayQuestions = option === 'essay' ? JSON.parse(essayQuestions) : item.essayQuestions;
+
+    await item.save();
+
+    res.status(200).json(item);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+};

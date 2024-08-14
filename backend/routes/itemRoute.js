@@ -1,6 +1,6 @@
 import express from 'express';
 import multer from 'multer';
-import { createItem, getItems, deleteItem, getRecentPdfs, getItemById } from '../controllers/itemController.js';
+import { createItem, getItems, deleteItem, getRecentPdfs, getItemById, updateItem } from '../controllers/itemController.js';
 
 const router = express.Router();
 
@@ -16,9 +16,11 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 router.post('/', upload.fields([{ name: 'file' }, { name: 'markingSchemeFile' }]), createItem);
+router.put('/:id', upload.fields([{ name: 'file' }, { name: 'markingSchemeFile' }]), updateItem);
 router.get('/', getItems);
 router.delete('/:id', deleteItem);
 router.get('/recent-pdfs', getRecentPdfs);
 router.get('/:id', getItemById);
+
 
 export default router;

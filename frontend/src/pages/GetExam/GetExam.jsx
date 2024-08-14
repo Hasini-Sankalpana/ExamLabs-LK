@@ -281,8 +281,6 @@ const [showReport, setShowReport] = useState(false);
                 <h6>Feedback</h6>
                 <textarea
                   className="essay-input"
-                  value={essayAnswers[currentQuestionIndex] || ''}
-                  onChange={handleEssayChange}
                   rows="10"
                   cols="50"
                 /> 

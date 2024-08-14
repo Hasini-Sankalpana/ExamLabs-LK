@@ -42,7 +42,7 @@
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #fff;
+  background-color:transparent;
 }
 .list-page li:hover {
   background: transparent;
@@ -60,7 +60,10 @@
   display: flex;
   justify-content: space-between;
 }
-
+ .list-btn {
+  margin-left:62%;
+  margin-bottom: -20px;
+ }
 
 .list-page button {
   padding: 10px 10px;
@@ -72,8 +75,8 @@
   background-color: rgb(6, 6, 105);
   cursor: pointer;
   width: 150px;
-  margin-bottom: 12px;
-  margin-top: 15px;
+  margin-right: 20px;
+  
 }
 
 .list-page button:hover {
@@ -85,6 +88,7 @@
   color: rgb(6, 6, 105);
   text-decoration: underline;
   margin-left: 1%;
+  margin-top: -10%;
 }
 
 .toggle-details-link:hover {

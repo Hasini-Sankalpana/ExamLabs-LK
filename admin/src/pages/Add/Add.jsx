@@ -1,21 +1,48 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useParams, useNavigate } from 'react-router-dom';
 import AdminSidebar from '../../components/AdminSidebar/AdminSidebar';
 import upload_img from '../../assets/upload_img.png';
 import './Add.css';
 
 const Add = ({ onAddItem }) => {
+  const { id } = useParams();
+  const navigate = useNavigate();
   const [file, setFile] = useState(null);
   const [filePath, setFilePath] = useState('');
   const [markingSchemeFile, setMarkingSchemeFile] = useState(null);
   const [markingSchemeFilePath, setMarkingSchemeFilePath] = useState('');
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
-  const [option, setOption] = useState('pdf');
+  const [option, setOption] = useState('');
   const [subject, setSubject] = useState('Math');
   const [year, setYear] = useState('2023');
   const [questions, setQuestions] = useState([{ question: '', options: ['', '', '', ''], answer: '' }]);
   const [essayQuestions, setEssayQuestions] = useState(['']);
+
+  useEffect(() => {
+    if (id) {
+      const fetchItem = async () => {
+        try {
+          const res = await axios.get(`http://localhost:4000/api/items/${id}`);
+          const item = res.data;
+          setName(item.name);
+          setDescription(item.description);
+          setOption(item.option);
+          setSubject(item.subject);
+          setYear(item.year);
+          setFilePath(item.filePath);
+          setMarkingSchemeFilePath(item.markingSchemeFilePath);
+          setQuestions(item.questions || []);
+          setEssayQuestions(item.essayQuestions || []);
+        } catch (error) {
+          console.error(error);
+        }
+      };
+
+      fetchItem();
+    }
+  }, [id]);
 
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
@@ -30,6 +57,11 @@ const Add = ({ onAddItem }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if ((option === 'pdf' && !file) || (option === 'markingScheme' && !markingSchemeFile)) {
+      alert('Please upload the required file.');
+      return;
+    }
+
     const formData = new FormData();
     formData.append('name', name);
     formData.append('description', description);
@@ -41,22 +73,29 @@ const Add = ({ onAddItem }) => {
     formData.append('questions', JSON.stringify(questions));
     formData.append('essayQuestions', JSON.stringify(essayQuestions));
 
-
     try {
-      const res = await axios.post('http://localhost:4000/api/items', formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      });
-      console.log('Created item:', res.data);
-      onAddItem(res.data);
+      if (id) {
+        await axios.put(`http://localhost:4000/api/items/${id}`, formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        });
+      } else {
+        const res = await axios.post('http://localhost:4000/api/items', formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        });
+        onAddItem(res.data);
+      }
+      navigate('/list');
     } catch (error) {
       console.error(error);
     }
 
     setName('');
     setDescription('');
-    setOption('pdf');
+    setOption('');
     setSubject('Math');
     setYear('2023');
     setFile(null);
@@ -104,7 +143,7 @@ const Add = ({ onAddItem }) => {
       <AdminSidebar />
 
       <div className="add-page">
-        <h2>Add New Content</h2>
+        <h2>{id ? 'Edit Content' : 'Add New Content'}</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label>Name</label>
@@ -128,13 +167,11 @@ const Add = ({ onAddItem }) => {
                 <option value="Citizenship">Citizenship Studies</option>
                 <option value="English Literature">English Literature</option>
                 <option value="ICT">ICT</option>
-                <option value="Health and Physical Education">Health and physical sciences</option>
+                <option value="Health and Physical Education">Health and Physical Education</option>
                 <option value="Home Economics">Home Economics</option>
                 <option value="Tamil">Tamil</option>
                 <option value="Art">Art</option>
                 <option value="Music">Music</option>
-
-
               </select>
             </div>
             <div className="form-group">
@@ -148,7 +185,8 @@ const Add = ({ onAddItem }) => {
           </div>
           <div className="form-group">
             <label>Type</label>
-            <select value={option} onChange={handleOptionChange}>
+            <select value={option} onChange={handleOptionChange} required>
+              <option value="" disabled>Select Type</option>
               <option value="pdf">Past Papers (PDF)</option>
               <option value="markingScheme">Marking Schemes (PDF)</option>
               <option value="mcq">MCQ</option>
@@ -171,7 +209,6 @@ const Add = ({ onAddItem }) => {
                   id="fileInput"
                   onChange={handleFileChange}
                   style={{ display: 'none' }}
-                  required
                 />
               </div>
             </div>
@@ -192,7 +229,6 @@ const Add = ({ onAddItem }) => {
                   id="markingSchemeFileInput"
                   onChange={handleMarkingSchemeFileChange}
                   style={{ display: 'none' }}
-                  required
                 />
               </div>
             </div>
@@ -259,7 +295,7 @@ const Add = ({ onAddItem }) => {
               </button>
             </div>
           )}
-          <button type="submit">Submit</button>
+          <button type="submit">{id ? 'Update' : 'Submit'}</button>
         </form>
       </div>
     </div>

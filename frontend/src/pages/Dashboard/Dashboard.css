@@ -57,17 +57,22 @@
     height: 310px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow-y: auto; /* Add scrollbar for vertical overflow */
-    height:318px; /* Adjust max height as needed */
+    height:318px; 
 
   }
 
+  .com-past {
+    background-color:transparent;
+    overflow-y: auto; /* Add scrollbar for vertical overflow */
+    height:240px; 
+  }
+    
   .completed-papers.short {
     height: 100px; /* Adjusted height */
   }
   
 
-  .completed-papers::-webkit-scrollbar {
+  .com-past::-webkit-scrollbar {
     width: 0; /* Remove scrollbar width */
     background: transparent; /* Optional: make scrollbar background transparent */
   }

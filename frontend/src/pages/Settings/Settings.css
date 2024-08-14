@@ -22,10 +22,10 @@ body.light {
   background:transparent;
   color: black;
   transition: background-color 0.3s, color 0.3s;
-  overflow-y: auto;
+  
 }
 
-.settings-content::-webkit-scrollbar {
+.settings::-webkit-scrollbar {
   width: 0; /* Remove scrollbar width */
   background: transparent; /* Optional: make scrollbar background transparent */
 }
@@ -37,18 +37,29 @@ body.light {
   color: rgb(6, 6, 105);
 }
 
+.settings {
+  overflow-y: auto;
+  display: flex; 
+  flex-wrap: wrap;
+  gap: 0px 50px;
+  margin-top: 10px;
+  justify-content: start;
+}
+
 /* Settings Section */
 .settings-section {
   margin-bottom: 2rem;
+  border: 1px solid rgb(215, 212, 212);
   padding: 1.5rem;
   border-radius: 8px;
-  background-color:white;
+  width: 45%;
   
 }
 
-.settings-section:hover {
-  background: transparent;
-}
+/*.settings-section:hover {
+  background-color: white;
+  border: none;
+}*/
 
 .settings-section h2 {
   margin-bottom: 1rem;
@@ -84,6 +95,7 @@ body.light {
 .settings-section button {
   padding: 0.75rem 1.5rem;
   border: none;
+  margin-top: 15px;
   border-radius: 4px;
   background-color:  rgb(6, 6, 105);
   color: #fff;

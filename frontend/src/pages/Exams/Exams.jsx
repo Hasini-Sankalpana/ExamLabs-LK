@@ -53,10 +53,13 @@ const Exams = () => {
 
   return (  
     <div className="exams-container">
+       <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css"
+    rel="stylesheet"/>
         <Sidebar />
       <div className="exams-content">
         <div className="exams-header">
-          <h1>Exams</h1>
+          <h1>Get Exams</h1>
           <div className="filter-container">
             <select onChange={(e) => setSubject(e.target.value)} value={subject}>
               <option value="">All Subjects</option>
@@ -72,11 +75,12 @@ const Exams = () => {
                 <option key={y} value={y}>{y}</option>
               ))}
             </select>
-            <button onClick={handleFilter}>Filter</button>
+            <button onClick={handleFilter}>Filter <i class="ri-filter-2-line"></i></button>
           </div>
         </div>
+        {filteredMCQs.length > 0 ? (
         <div className="questions-section">
-          <h2>MCQ Questions</h2>
+          <h2>MCQ</h2>
           <div className="mcq-container">
             {filteredMCQs.map((mcq, index) => (
               <div key={index} className="mcq-block">
@@ -89,8 +93,14 @@ const Exams = () => {
             ))}
           </div>
         </div>
+        ):(
+          <div className="no-mcqs">
+                    <h3>No MCQs Available</h3>
+                </div>
+        )}
+        {filteredEssays.length > 0 ? (
         <div className="questions-section2">
-          <h2>Structured Essay Questions</h2>
+          <h2>Structured Essay </h2>
           <div className="essay-container">
             {filteredEssays.map((essay, index) => (
               <div key={index} className="essay-block">
@@ -103,7 +113,13 @@ const Exams = () => {
             ))}
           </div>
         </div>
+        ):(
+          <div className="no-essays">
+                    <h3>No Structured Esaays Available</h3>
+                </div>
+        )}
       </div>
+          
    
     </div>
   

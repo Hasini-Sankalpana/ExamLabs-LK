@@ -14,12 +14,9 @@
   flex: 1;
   padding: 20px;
   background-color:transparent;
-  overflow-y: auto; /* Ensure content scrolls when overflow occurs */
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;
   margin-left: 3%;
   margin-right: 1%; 
-  overflow-y: auto;
+  
 }
 
 .favorites-content img {
@@ -30,12 +27,12 @@
   right: 120px;
   z-index: -1;
 }
-.favorites-content::-webkit-scrollbar {
+.favorites-list::-webkit-scrollbar {
   width: 0;
   background: transparent;
 }
 
-.favorites-content::-webkit-scrollbar {
+.favorites-list::-webkit-scrollbar {
   display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
 }
 
@@ -55,6 +52,10 @@
 .favorites-list {
   list-style: none;
   padding: 0;
+  overflow-y: auto; /* Ensure content scrolls when overflow occurs */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  height: 80vh;
 }
 
 .favorite-item {

@@ -135,8 +135,9 @@ const Settings = () => {
       <Sidebar />
       <div className="settings-content">
         <div className="settings-header">
-          <h1>Settings Page</h1>
+          <h1>Settings</h1>
         </div>
+        <div className="settings">
         <div className="settings-section">
           <h2>Account Settings</h2>
           <label htmlFor="name">Name</label>
@@ -199,6 +200,7 @@ const Settings = () => {
             Delete Account
           </button>
         </div>
+      </div>
       </div>
     </div>
   );

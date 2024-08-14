@@ -1,36 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 .subject-page-container {
-    padding: 20px;
+  padding: 20px;
   width: 80%;
-  margin: auto;
+  margin:auto;
   font-family: "Roboto", sans-serif;
-  justify-content: start;
 }
 
-.papers-list {
+.papers-list-subject {
     display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: start;
-
+   flex-direction: column;
+    gap: 10px;
+    justify-content: start;
+    
 }
+
 
 .paper-content {
-    margin-top: 50px;
+    margin-top:10px;
     display: flex;
-    flex-wrap: wrap;
+     flex-wrap: wrap;
     gap: 20px;
     justify-content: start;
-    margin-left: -8%;
+    margin-bottom: 50px;
+   
 }
 .paper-content-marking {
-    margin-top: 50px;
+    margin-top: 10px;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: start;
-    margin-left: -14%;
+   
+    
 }
 
 .paper-item {
@@ -105,12 +107,26 @@
 .filter-by-year {
     margin-top: 15px;
     margin-bottom: 15px;
+    margin-left: 75%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }
 
 .filter-by-year select {
     width: 150px;
+    height: 20PX;
     border: 1px solid gray;
     border-radius: 4px;
-    padding-left: 5px;
-    margin-left: 10px;
+  
 }
+
+.no-past-papers {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.no-marking-schemes {
+    margin-top: 40px;
+}
+

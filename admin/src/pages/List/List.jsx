@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import AdminSidebar from '../../components/AdminSidebar/AdminSidebar';
 import './List.css';
 
 const List = () => {
   const [items, setItems] = useState([]);
   const [expandedItemId, setExpandedItemId] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchItems = async () => {
@@ -33,69 +35,72 @@ const List = () => {
     setExpandedItemId(id === expandedItemId ? null : id);
   };
 
+  const handleUpdate = (id) => {
+    navigate(`/add/${id}`);
+  };
+
   return (
     <div className="list">
-       <AdminSidebar />
-    
-    <div className="list-page">
-      
-      <h2>Added Items</h2>
-      <ul>
-        {items.map((item, index) => (
-          <li key={item._id} className={expandedItemId === item._id ? 'expanded' : ''}>
-            <div className="item-preview">
-              <div>
-                <h3>{item.name}</h3>
-                <p>{item.description}</p>
-                <p>Created: {new Date(item.createdAt).toLocaleString()}</p>
+      <AdminSidebar />
+      <div className="list-page">
+        <h2>Added Items</h2>
+        <ul>
+          {items.map((item, index) => (
+            <li key={item._id} className={expandedItemId === item._id ? 'expanded' : ''}>
+              <div className="item-preview">
+                <div>
+                  <h3>{item.name}</h3>
+                  <p>{item.description}</p>
+                  <p>Created: {new Date(item.createdAt).toLocaleString()}</p>
+                </div>
               </div>
+              <div className="list-btn">
+              <button onClick={() => handleDelete(item._id)}>Delete</button>
+              <button onClick={() => handleUpdate(item._id)}>Update</button>
               </div>
-              <button onClick={() => handleDelete(item._id)}>Delete</button> <br />
-                <span className="toggle-details-link" onClick={() => toggleDetails(item._id)}>
-                  {expandedItemId === item._id ? 'Hide Details' : 'Show Details'}
-                </span> 
-        
-           
-            {expandedItemId === item._id && (
-              <div className="item-details">
-                {item.option === 'pdf' && (
-                  <a href={`http://localhost:4000/${item.file}`} target="_blank" rel="noopener noreferrer">
-                  Download PDF
-                </a>
-                )}
-                {item.option === 'markingScheme' && (
-                  <a href={`http://localhost:4000/${item.markingSchemeFile}`} target="_blank" rel="noopener noreferrer">
-                  Download PDF
-                </a>
-                )}
-                {item.option === 'mcq' && (
-                  <div>
-                    <p>Type: MCQ</p><br />
-                  {item.questions.map((q, i) => (
-                      <div key={i}>
-                         <b><p>Question: {q.question}</p></b>
-                        {q.options.map((opt, j) => (
-                          <p key={j}>Option {j + 1}: {opt}</p>
-                        ))}
-                        <p>Answer: {q.answer}</p>
-                      </div>
-                    ))}
-                  </div>
-                )}
-                {item.option === 'essay' && (
-                  <div>
-                    <p>Type: Structured Essay</p><br />
-                    {item.essayQuestions.map((q, i) => (
-                     <b><p key={i}>Question: {q}</p></b> 
-                    ))}
-                  </div>
-                )}
-              </div>
-            )}
-          </li>
-        ))}
-      </ul>
-    </div>
+              <span className="toggle-details-link" onClick={() => toggleDetails(item._id)}>
+                {expandedItemId === item._id ? 'Hide Details' : 'Show Details'}
+              </span>
+              {expandedItemId === item._id && (
+                <div className="item-details">
+                  {item.option === 'pdf' && (
+                    <a href={`http://localhost:4000/${item.file}`} target="_blank" rel="noopener noreferrer">
+                      Download PDF
+                    </a>
+                  )}
+                  {item.option === 'markingScheme' && (
+                    <a href={`http://localhost:4000/${item.markingSchemeFile}`} target="_blank" rel="noopener noreferrer">
+                      Download PDF
+                    </a>
+                  )}
+                  {item.option === 'mcq' && (
+                    <div>
+                      <p>Type: MCQ</p><br />
+                      {item.questions.map((q, i) => (
+                        <div key={i}>
+                          <b><p>Question: {q.question}</p></b>
+                          {q.options.map((opt, j) => (
+                            <p key={j}>Option {j + 1}: {opt}</p>
+                          ))}
+                          <p>Answer: {q.answer}</p>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  {item.option === 'essay' && (
+                    <div>
+                      <p>Type: Structured Essay</p><br />
+                      {item.essayQuestions.map((q, i) => (
+                        <b><p key={i}>Question: {q}</p></b>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

@@ -80,8 +80,9 @@ const Subject = () => {
                     })}
                 </select>
             </div>
-            <div className="papers-list">
-                <h2>Past Papers</h2> 
+            {pdfs.length > 0 ? (
+            <div className="papers-list-subject">
+                <h2>PAST PAPERS</h2> 
                 <div className="paper-content">
                 {pdfs.map(pdf => (
                     <div key={pdf._id} className="paper-item">
@@ -106,9 +107,14 @@ const Subject = () => {
                 ))}
                  </div>
             </div>
+            ):(
+                <div className="no-past-papers">
+                <h3>No Past Papers Available</h3>
+            </div>
+            )}
             {markingSchemes.length > 0 ? (
-            <div className="papers-list">
-                <h2>Marking Schemes</h2>
+            <div className="papers-list-subject">
+                <h2>MARKING SCHEMES</h2>
                 <div className="paper-content-marking">
                 {markingSchemes.map(markingScheme => (
                     <div key={markingScheme._id} className="paper-item">

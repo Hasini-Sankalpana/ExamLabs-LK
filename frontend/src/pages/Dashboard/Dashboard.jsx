@@ -72,6 +72,7 @@ const Dashboard = () => {
         </div>
         <div className={`completed-papers ${examScores.length === 0 ? 'short' : ''}`}>
           <h3>Completed Past Papers</h3>
+          <div className="com-past">
           {examScores.length === 0 ? (
             <p>No completed papers yet.</p>
           ) : (
@@ -88,6 +89,7 @@ const Dashboard = () => {
               </div>
             ))
           )}
+          </div>
         </div>
         <div className="statistics">
           <div className="stat">

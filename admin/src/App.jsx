@@ -21,7 +21,7 @@ const App = () => {
       <div className="app-content">
         
         <Routes>
-          <Route path='/add' element={<Add onAddItem={handleAddItem} />} />
+          <Route path='/add/:id?' element={<Add onAddItem={handleAddItem} />} />
           <Route path='/list' element={<List items={items} />} />
           <Route path='/UserOverview' element={<UserOverview/>} />
           <Route path='/' element={<Home onAddItem={handleAddItem} items={items}/>} />

@@ -307,6 +307,7 @@
   .report-container {
     padding: 20px;
     border: 1px solid #ddd;
+    border-radius: 4px;
     margin-top: 20px;
   }
   
