@@ -10,7 +10,7 @@ const Navbar = ({setShowLogin}) => {
        const [menu, setMenu] = useState("Home");
        const {token,setToken } = useContext(StoreContext);
        const [profilePicture, setProfilePicture] = useState(""); // Default profile picture
-
+       const [dropdownVisible, setDropdownVisible] = useState(false);
 
        const navigate = useNavigate();
    
@@ -45,6 +45,11 @@ const Navbar = ({setShowLogin}) => {
          setToken("");
          navigate("/");
     }
+
+    const toggleDropdown = () => {
+        setDropdownVisible(!dropdownVisible);
+    };
+
        
   return (
     <div className='navbar' id='navbar'>
@@ -63,13 +68,16 @@ const Navbar = ({setShowLogin}) => {
             {!token?  <button onClick={() => setShowLogin(true)}>Sign In</button>  
             :<div className='navbar-profile'>
             <img src={profilePicture} alt=""  className="profile-picture"/>
-            <ul className='nav-profile-dropdown'>
-             <li onClick={() => navigate('/dashboard')}><p>Dashboard</p></li>
-             <hr />
-             <li onClick={() => navigate('/exams')}><p>Exams</p></li>
-             <hr />
-             <li onClick={logout}><p>Logout</p></li>
-            </ul>
+            <i className="ri-menu-line hamburger-icon" onClick={toggleDropdown}></i>
+                    {dropdownVisible && (
+                        <ul className='nav-profile-dropdown'>
+                            <li onClick={() => { navigate('/dashboard'); toggleDropdown(); }}><p>Dashboard</p></li>
+                            <hr />
+                            <li onClick={() => { navigate('/exams'); toggleDropdown(); }}><p>Exams</p></li>
+                            <hr />
+                            <li onClick={() => { logout(); toggleDropdown(); }}><p>Logout</p></li>
+                        </ul>
+                    )}
          </div>
          
          }

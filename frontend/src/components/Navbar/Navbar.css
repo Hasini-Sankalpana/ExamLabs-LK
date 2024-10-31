@@ -1,5 +1,6 @@
 /* Navbar styles */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/* Navbar styles */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap');
 
 .navbar {
     z-index: 1000;
@@ -33,7 +34,7 @@
 }
 
 .navlist a:hover {
-    color: rgb(6, 6, 105);
+    color: rgb(30, 35, 176);
     cursor: pointer;
 }
 
@@ -60,43 +61,12 @@
     border-bottom: 2px solid rgb(6, 6, 105);
 }
 
-/* Dropdown styles */
-.dropdown {
-    position: relative;
-    display: inline-block;
-    margin-top: 3.3%;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    width: 168px;
-    border-radius: 4px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgb(230, 230, 236);
-    z-index: 1;
-}
-
-.dropdown-content li {
-    color: black;
-    padding: 7px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content li:hover {
-    background-color: #f1f1f1;
-    cursor: default;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
 /* Profile dropdown styles */
 .navbar-profile {
     position: relative;
+    display: flex;
+    gap: 5px;
+    align-items: center;
 }
 
 .profile-picture {
@@ -105,16 +75,20 @@
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid #fff;
+    cursor: pointer;
+}
+
+/* Hamburger icon styles */
+.hamburger-icon {
+    font-size: 25px;
+    margin-left: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 
 .nav-profile-dropdown {
     position: absolute;
-    display: none;
-    right: 0;
-    z-index: 1;
-}
-
-.navbar-profile:hover .nav-profile-dropdown {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -124,6 +98,9 @@
     border: 1px solid rgb(230, 230, 236);
     outline: 2px solid rgb(255, 252, 252);
     list-style: none;
+    top: 100%;
+    right: 0;
+    z-index: 1;
 }
 
 .nav-profile-dropdown li {
@@ -134,46 +111,6 @@
     color: rgb(0, 0, 0);
 }
 
-.nav-profile-dropdown img {
-    width: 20px;
-}
-
 .nav-profile-dropdown li:hover {
     color: rgb(6, 6, 105);
-}
-
-/* Hamburger menu styles */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.hamburger div {
-    width: 25px;
-    height: 3px;
-    background-color: black;
-    margin: 4px;
-    transition: all 0.3s ease;
-}
-
-@media (max-width: 768px) {
-    .navlist {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: white;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        padding: 20px 0;
-    }
-     
-    .navlist a, .navlist .dropdown {
-        margin: 10px 0;
-    }
-}
-
-.navlist.active {
-    display: flex;
 }

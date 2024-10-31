@@ -180,7 +180,6 @@ const [showReport, setShowReport] = useState(false);
         <ul>
           <li>Complete the exam independently without external help.</li>
           <li>Ensure a reliable internet connection before starting.</li>
-          <li>Rule 3</li>
         </ul>
         <button onClick={() => setIsStarted(true)}>Start Quiz</button>
       </div>

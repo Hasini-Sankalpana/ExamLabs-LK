@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Subjects.css';
 import { Link } from 'react-router-dom';
 import { FaSearch } from 'react-icons/fa';
@@ -17,9 +17,11 @@ import artImage from '../../assets/art.png';
 import musicImage from '../../assets/music.png';
 import sinhalaImage from '../../assets/sinhala.png';
 import tamilImage from '../../assets/tamil.png';
+import load from '../../assets/load.gif'; // Import the loading GIF
 
 const Subjects = () => {
     const [searchTerm, setSearchTerm] = useState('');
+    const [loading, setLoading] = useState(true); // Add loading state
 
     const subjects = [
         {
@@ -114,6 +116,15 @@ const Subjects = () => {
         },
     ];
 
+    useEffect(() => {
+        // Simulate loading time
+        const timer = setTimeout(() => {
+            setLoading(false);
+        }, 2000); // 2 seconds loading time
+
+        return () => clearTimeout(timer); // Cleanup timer on component unmount
+    }, []);
+
     const filteredSubjects = subjects.filter(subject =>
         subject.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
@@ -132,16 +143,23 @@ const Subjects = () => {
                     <FaSearch />
                 </div>
             </div>
-            <div className="subject-cards">
-                {filteredSubjects.map(subject => (
-                    <Link to={`/subjects/${subject.id}`} key={subject.id} className="subject-card-link">
-                        <div className="subject-card">
-                            <img src={subject.image} alt={subject.name} />
-                            <h3>{subject.name}</h3>
-                        </div>
-                    </Link>
-                ))}
-            </div>
+            {/* Loading effect */}
+            {loading ? (
+                <div className="loading-container">
+                    <img src={load} alt="Loading..." />
+                </div>
+            ) : (
+                <div className="subject-cards">
+                    {filteredSubjects.map(subject => (
+                        <Link to={`/subjects/${subject.id}`} key={subject.id} className="subject-card-link">
+                            <div className="subject-card">
+                                <img src={subject.image} alt={subject.name} />
+                                <h3>{subject.name}</h3>
+                            </div>
+                        </Link>
+                    ))}
+                </div>
+            )}
         </div>
     );
 };

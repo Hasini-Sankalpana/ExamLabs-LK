@@ -87,6 +87,19 @@
     border-radius: 8px;
 }
 
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  width: 100%;
+}
+
+.loading-container img {
+  width: 100px;
+  height: 100px;
+}
+
 @media (max-width: 1200px) {
     .subject-card {
       width: 45%;

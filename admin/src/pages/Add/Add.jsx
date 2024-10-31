@@ -295,7 +295,7 @@ const Add = ({ onAddItem }) => {
               </button>
             </div>
           )}
-          <button type="submit">{id ? 'Update' : 'Submit'}</button>
+          <button type="submit">{id ? 'Update' : 'Save'}</button>
         </form>
       </div>
     </div>

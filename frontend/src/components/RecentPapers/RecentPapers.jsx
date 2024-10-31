@@ -37,8 +37,10 @@ const RecentPapers = () => {
                             </Worker>
                         </div>
             <div className="paper-info">
-              <h3>{pdf.name} <br /> ({pdf.year})</h3>
-              <p>{pdf.description}</p>
+              <h3>{pdf.name}</h3>
+              <p>({pdf.year})</p>
+              {/*<p>{pdf.description}</p>*/}
+              <br />
               <a href={`http://localhost:4000/${pdf.file}`} download>
                 <button>Download Now</button>
               </a>

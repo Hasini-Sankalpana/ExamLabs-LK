@@ -16,7 +16,6 @@ const Home = ({ setShowLogin }) => {
         <Header token={token} setShowLogin={setShowLogin} />
         <Subjects/>
         <RecentPapers/>
-        <AppDownload/>
 
     </div>
   )

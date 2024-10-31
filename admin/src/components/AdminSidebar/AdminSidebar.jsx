@@ -30,7 +30,7 @@ const AdminSidebar = () => {
           </NavLink>
         <NavLink to='/add' className='sidebar-option'>
         <i className="ri-folder-add-line"></i>
-          <li>Add Papers</li>
+          <li>Add Content</li>
           </NavLink>
        
          <NavLink to='/list' className='sidebar-option'>

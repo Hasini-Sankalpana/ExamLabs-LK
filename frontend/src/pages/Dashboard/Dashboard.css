@@ -180,6 +180,21 @@
   .statistics .stat p {
     margin: 0;
   }
+
+  .loading-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+  }
+  
+  .loading-page img {
+    width: 100px;
+    height: 100px;
+  }
+  
   
   @media only screen and (max-width: 768px) {
     .dashboard-top {

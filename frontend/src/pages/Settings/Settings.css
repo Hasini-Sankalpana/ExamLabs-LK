@@ -108,11 +108,11 @@ body.light {
   background-color: var(--primary-color-hover);
 }
 
-.delete-account-btn {
+.settings-section .delete-account-btn {
   background-color: var(--danger-color);
 }
 
-.delete-account-btn:hover {
+.settings-section .delete-account-btn:hover {
   background-color: var(--danger-color-hover);
 }
 
